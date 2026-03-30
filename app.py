@@ -290,7 +290,7 @@ if submitted:
                 data = {"job_url": job_url, "job_text_override": ""}
 
             response = requests.post(
-                "https://web-production-48a5b.up.railway.app",
+                "https://web-production-48a5b.up.railway.app/full-analyze",
                 files=files,
                 data=data
             )
