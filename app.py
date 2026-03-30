@@ -298,9 +298,11 @@ if submitted:
 
         if "error" in result:
             st.error(f"❌ Error: {result['error']}")
+        elif "analysis" not in result:
+            st.error(f"❌ Unexpected response from backend:")
+            st.json(result)  # shows exactly what backend returned
         else:
             analysis = result["analysis"]
-            score = analysis["match_score"]
 
             # ── Score Card ──
             color = "#68d391" if score >= 70 else "#f6ad55" if score >= 50 else "#fc8181"
