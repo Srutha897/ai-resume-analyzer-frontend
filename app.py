@@ -303,6 +303,7 @@ if submitted:
             st.json(result)  # shows exactly what backend returned
         else:
             analysis = result["analysis"]
+            score = int(analysis["match_score"])
 
             # ── Score Card ──
             color = "#68d391" if score >= 70 else "#f6ad55" if score >= 50 else "#fc8181"
